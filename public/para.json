@@ -1,0 +1,19 @@
+{
+    "page":[
+        {
+            "id":1,
+            "name":"potato",
+            "info":"its a vegatable"
+        },
+        {
+            "id":2,
+            "name":"apple",
+            "info":"it is a fruit"
+        },
+        {
+            "id":3,
+            "name":"banana",
+            "info":"it is a fruit"
+        }        
+    ]
+}
