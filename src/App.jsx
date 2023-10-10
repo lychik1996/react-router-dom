@@ -5,18 +5,23 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from 'react-router-dom';
-import HomePage from './components/mainPage/HomePage';
-import AboutPage from './components/mainPage/AboutPage';
-import BlogPage, { blogLoader } from './components/mainPage/BlogPage';
+import { lazy } from 'react';//for lazy load
+const HomePage = lazy(()=>import('./components/mainPage/HomePage'));//import lazy load element
+const AboutPage= lazy(()=>import('./components/mainPage/AboutPage'));
+
+const BlogPage= lazy(()=>import('./components/mainPage/BlogPage'));
+import { blogLoader } from './components/mainPage/BlogPage';
 import NotFoundPage from './components/mainPage/NotFoundPage';
 import HeadFoodPage from './components/mainPage/HeadFoodPage';
-import SinglePage, { singleLoader } from './components/dynamicPage/SinglePage';
-import CreatePage from './components/dynamicPage/CreatePage';
-import EditPage from './components/dynamicPage/EditPage';
+const SinglePage = lazy(()=>import('./components/dynamicPage/SinglePage'));
+import  { singleLoader } from './components/dynamicPage/SinglePage';
+const CreatePage= lazy(()=>import('./components/dynamicPage/CreatePage'));
+const EditPage= lazy(()=>import('./components/dynamicPage/EditPage'));
 import LoginPage from './components/mainPage/LoginPage';
 import RequireAuth from './hoc/RequireAuth';
 import { AuthProvider } from './hoc/AuthProvider';
 import ErrorPage from './components/mainPage/ErrorPage';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
